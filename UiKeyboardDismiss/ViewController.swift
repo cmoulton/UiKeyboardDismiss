@@ -19,14 +19,12 @@ class ViewController: UIViewController {
     textfield!.borderStyle = UITextBorderStyle.Line
     self.view.addSubview(textfield!)
   }
-
   
   override func viewDidAppear(animated: Bool) {
     super.viewDidAppear(animated)
     
     NSNotificationCenter.defaultCenter().addObserver(self, selector: Selector("keyboardWillShow:"), name: UIKeyboardWillShowNotification, object: nil)
     NSNotificationCenter.defaultCenter().addObserver(self, selector: Selector("keyboardWillHide:"), name: UIKeyboardWillHideNotification, object: nil)
-
   }
   
   func keyboardWillShow(notification: NSNotification) {
